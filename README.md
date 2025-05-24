@@ -8,11 +8,20 @@
 </div>
 
 ## Environments  
+The following operations are all performed in a Linux environment.  
+
 ```
 conda env create -f environment.yaml
+conda activate ssiunet 
 ```
 ```
-conda activate fingervein
+run pip install -e .
+```
+```
+sanity test: Enter python command-line interface and run
+
+import torch
+import mamba_ssm
 ```
 
 ## Prepare dataset for Training and Testing
