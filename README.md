@@ -1,7 +1,7 @@
 # SSIU-Net : A State Space-Inspired U-Net with Linear Attention for Breast Tumor Image Segmentation  
 <div align="center">
 
-  [[`Paper`](assets/paper.png)]
+  [[`Paper`](assets/AIxMHC2025_TumorSeg_Sean.pdf)]
   
   This is the official PyTorch implementation of SSIU-Net: a State Space-Inspired U-Net that integrates a State Space Model (SSM) with a Mamba-Inspired Linear Attention Block (MILA) for breast tumor image segmentation.  
 
