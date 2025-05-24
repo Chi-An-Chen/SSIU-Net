@@ -25,20 +25,20 @@ import mamba_ssm
 ```
 
 ## Prepare dataset for Training and Testing 
+Format your dataset in accordance with the nnU-Net format then run :   
 ```
-Format your dataset in accordance with the nnU-Net format then run : 
 bash 003_data.sh
 ```  
 
 ## Training
+Set your dataset id and other config in 004_run.sh then run :  
 ```
-Set your dataset id and other config in 004_run.sh then run : 
 bash 004_run.sh
 ```
 
 ## Inference 
-```
-Set your dataset id and other config in 005_inference.sh then run : 
+Set your dataset id and other config in 005_inference.sh then run :  
+``` 
 bash 005_inference.sh
 ```
 
