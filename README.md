@@ -4,12 +4,6 @@
   [[`Paper`](assets/paper.png)]
   
   This is the official PyTorch implementation of SSIU-Net: a State Space-Inspired U-Net that integrates a State Space Model (SSM) with a Mamba-Inspired Linear Attention Block (MILA) for breast tumor image segmentation.  
-  
-  <img src="assets/model.png" width="50%"><br>
-  Fig 1. Overall Architecture of LViT-CB model.  
-  
-  <img src="assets/blk.png" width="50%"><br>
-  Fig 2. Architecture Overview of the Competition Block (Top) and Competition Module (Bottom).  
 
 </div>
 
