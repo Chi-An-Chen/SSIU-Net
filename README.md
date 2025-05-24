@@ -15,43 +15,30 @@ conda env create -f environment.yaml
 conda activate ssiunet 
 ```
 ```
-run pip install -e .
-```
+cd SSIU-Net-main
+pip install -e .
 ```
 sanity test: Enter python command-line interface and run
-
+```
 import torch
 import mamba_ssm
 ```
 
-## Prepare dataset for Training and Testing
-Get a .pkl file contain data's path 
+## Prepare dataset for Training and Testing 
 ```
-python 000_make_Dataset.py
+Format your dataset in accordance with the nnU-Net format then run : 
+bash 003_data.sh
 ```  
 
 ## Training
-Start training the model 
 ```
-python 001_train.py
-```
-
-## Testing 
-Start evaluating the model
-```
-python 002_test.py
+Set your dataset id and other config in 004_run.sh then run : 
+bash 004_run.sh
 ```
 
-## Model's structure and details
+## Inference 
 ```
-python model_detail.py
+Set your dataset id and other config in 005_inference.sh then run : 
+bash 005_inference.sh
 ```
-
-# References： 
-> * C.-H. Hsia, L.-Y. Ke, and S.-T. Chen, “Improved lightweight convolutional neural network for finger vein recognition system,” _Bioengineering_, vol. 10, no. 8, pp. 919, 2023.  
-> [[GitHub]](https://github.com/liangying-Ke/ILCNN)
-> * T.F. Zhang, et al., "Cas-vit: Convolutional additive self-attention vision transformers for efficient mobile applications," _ArXiv_ ,arXiv:2408.03703, 2024.  
-> [[GitHub]](https://github.com/Tianfang-Zhang/CAS-ViT)
-> * Z. Yang, et al., "Comprehensive Competition Mechanism in Palmprint Recognition," _IEEE Transactions on Information Forensics and Security_, vol. 18, pp. 5160-5170, 2023.  
->[[GitHub]](https://github.com/Zi-YuanYang/CCNet)
 
