@@ -3,7 +3,7 @@
 
   [[`Paper`](assets/paper.pdf)]
   
-  This is the official PyTorch implementation of SSIU-Net: a State Space-Inspired U-Net that integrates a State Space Model (SSM) with a Mamba-Inspired Linear Attention Block (MILA) for breast tumor image segmentation.  
+  This is the official implementation of SSIU-Net: a State Space-Inspired U-Net that integrates a State Space Model (SSM) with a Mamba-Inspired Linear Attention Block (MILA) for breast tumor image segmentation.  
 
 </div>
 
@@ -40,5 +40,19 @@ bash 004_run.sh
 Set your dataset id and other config in 005_inference.sh then run :  
 ``` 
 bash 005_inference.sh
+```
+
+## Citation： 
+```
+@INPROCEEDINGS{,
+  author={Chen, Chi-An and Shen, Sean Chuan-En and Ke, Liang-Ying and Hsia, Chih-Hsien},
+  booktitle={2025 IEEE Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIMHC)}, 
+  title={SSIU-Net : A State Space-Inspired U-Net with Linear Attention for Breast Tumor Image Segmentation}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={},
+  keywords={},
+  doi={}}
 ```
 
