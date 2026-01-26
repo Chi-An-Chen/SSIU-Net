@@ -44,15 +44,15 @@ bash 005_inference.sh
 
 ## Citation： 
 ```
-@INPROCEEDINGS{,
+@INPROCEEDINGS{11326852,
   author={Chen, Chi-An and Shen, Sean Chuan-En and Ke, Liang-Ying and Hsia, Chih-Hsien},
-  booktitle={2025 IEEE Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIMHC)}, 
-  title={SSIU-Net : A State Space-Inspired U-Net with Linear Attention for Breast Tumor Image Segmentation}, 
+  booktitle={2025 Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIxMHC)}, 
+  title={A State Space-Inspired U-Net with Linear Attention for Breast Tumor Segmentation}, 
   year={2025},
   volume={},
   number={},
-  pages={},
-  keywords={},
-  doi={}}
+  pages={264-265},
+  keywords={Measurement;Location awareness;Breast tumors;Databases;Annotations;Semantic segmentation;Prevention and mitigation;Mortality;Feature extraction;Breast cancer;Computer vision;Image segmentation;State space models;U-Net;Breast tumor},
+  doi={10.1109/AIxMHC65380.2025.00057}}
 ```
 
