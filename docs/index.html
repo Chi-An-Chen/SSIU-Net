@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbfaf7">
+  <meta name="description" content="SSIU-Net starts with a depthwise convolution on a breast MRI image. At each encoder stage, a state space block downsamples the features and linear attention relates distant locations. The decoder upsamples the features to produce a tumor mask.">
+  <title>SSIU-Net · A State Space-Inspired U-Net with Linear Attention for Breast Tumor Segmentation</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="site.js"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#overview">Skip to overview</a>
+  <header class="site-head"><div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="SSIU-Net, back to top"><span class="mark" aria-hidden="true"></span>SSIU-Net</a>
+    <nav aria-label="Sections"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">Citation</a></nav>
+  </div><div class="progress" aria-hidden="true"></div></header>
+  <main>
+    <section id="overview" class="wrap overview">
+      <div class="hero"><div>
+        <p class="eyebrow"><span class="rule"></span>AIxMHC 2025</p>
+        <h1>A <em>State Space-Inspired U-Net</em> with Linear Attention for Breast Tumor Segmentation</h1>
+        <p class="authors"><span>Chi-An Chen<sup>1</sup></span>, <span>Sean Chuan-En Shen<sup>2</sup></span>, <span>Liang-Ying Ke<sup>3</sup></span>, <span>Chih-Hsien Hsia<sup>1</sup></span></p>
+        <p class="affiliations"><span>¹ National Ilan University</span><span>² Asia American International Academy</span><span>³ National Cheng Kung University</span></p>
+        <div class="actions"><a class="button primary" href="https://ieeexplore.ieee.org/document/11326852">Read paper</a><a class="button" href="https://github.com/Chi-An-Chen/SSIU-Net">View code</a></div>
+      </div><dl class="metrics" aria-label="Paper-reported metrics"><div><dt>Dice · BreastDM</dt><dd>84.73<span>%</span></dd></div><div><dt>Positive predictive value</dt><dd>90.73<span>%</span></dd></div><div><dt>Recall</dt><dd>87.95<span>%</span></dd></div></dl></div>
+      <figure class="arch arch-portrait">
+        <figcaption><strong>Model architecture</strong><a href="figures/architecture.webp">Full size</a></figcaption>
+        <div class="arch-body"><div><h2>From local textures to a segmentation mask</h2><p>SSIU-Net starts with a depthwise convolution on a breast MRI image. At each encoder stage, a state space block downsamples the features and linear attention relates distant locations. The decoder upsamples the features to produce a tumor mask.</p></div>
+          <a class="diagram" href="figures/architecture.webp" aria-label="Open full-size diagram: SSIU-Net encoder stages contain SSM and MILA blocks. Skip connections join these stages to an upsampling decoder."><img src="figures/architecture.webp" width="350" height="572" alt="SSIU-Net encoder stages contain SSM and MILA blocks. Skip connections join these stages to an upsampling decoder."></a></div>
+      </figure>
+    </section>
+    <section id="method" class="section tinted"><div class="wrap">
+      <p class="eyebrow">Method</p><h2>Two blocks in the encoder</h2>
+      <p class="intro">The encoder alternates between reducing spatial resolution and learning relationships across the image. The state space and linear attention blocks play different roles in that sequence.</p><div class="methods"><article><h3>State space block</h3><a class="diagram" href="figures/ssm.webp" aria-label="Open full-size diagram: Normalization, a state space model and an MLP feed BlurPool downsampling."><img src="figures/ssm.webp" width="449" height="1270" alt="Normalization, a state space model and an MLP feed BlurPool downsampling." loading="lazy"></a><p>The block normalizes its input and mixes features with a state space model and an MLP. BlurPool filters the result before downsampling to limit aliasing.</p></article>
+<article><h3>Mamba-inspired linear attention</h3><a class="diagram" href="figures/mila.webp" aria-label="Open full-size diagram: The MILA block combines Mamba-like linear attention with an MLP and residual connections."><img src="figures/mila.webp" width="377" height="297" alt="The MILA block combines Mamba-like linear attention with an MLP and residual connections." loading="lazy"></a><p>The MILA block uses Mamba-like linear attention to relate spatially distant features. A subsequent MLP mixes information across channels, with residual connections around both steps.</p></article></div>
+    </div></section>
+    <section id="results" class="section wrap">
+      <p class="eyebrow">Results</p><h2>Tumor segmentation on BreastDM</h2>
+      <p class="intro">SSIU-Net achieved 84.73% Dice overlap on BreastDM. Table I compares the result with 80.1% for a fine-tuned U-Net. The paper reports an 80% training and 20% testing split.</p>
+      <div class="table-scroll" role="region" aria-label="Benchmark results" tabindex="0">
+        <table><caption>BreastDM · Table I, paper-reported results</caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">Dice (%) ↑</th><th scope="col">PPV (%) ↑</th><th scope="col">Recall (%) ↑</th></tr></thead><tbody><tr><th scope="row">PSPNet</th><td>72.7</td><td>72.9</td><td>72.5</td></tr><tr><th scope="row">UNeXt</th><td>70.1</td><td>86.3</td><td>59.0</td></tr><tr><th scope="row">U-Net (fine-tuned)</th><td>80.1</td><td>—</td><td>—</td></tr><tr class="featured"><th scope="row">SSIU-Net</th><td>84.73</td><td>90.73</td><td>87.95</td></tr></tbody>
+        </table>
+      </div><p class="note">PPV measures precision over predicted tumor pixels. Recall measures the fraction of reference tumor pixels recovered. A dash indicates that the paper did not report the metric.</p>
+    </section>
+    <section id="citation" class="section tinted"><div class="wrap resources">
+      <div><p class="eyebrow">Code &amp; citation</p><h2>Use this work</h2>
+        <p>See the project repository for the PyTorch implementation and instructions.</p>
+        <div class="resource-links"><a href="https://github.com/Chi-An-Chen/SSIU-Net#environments">Environment</a><a href="https://github.com/Chi-An-Chen/SSIU-Net#inference">Inference</a></div>
+      </div>
+      <div class="cite"><div class="cite-head"><strong>BibTeX</strong><button type="button" id="copy" hidden>Copy citation</button><span class="sr" id="copy-status" role="status"></span></div>
+        <pre><code id="bibtex">@INPROCEEDINGS{11326852,
+  author={Chen, Chi-An and Shen, Sean Chuan-En and Ke, Liang-Ying and Hsia, Chih-Hsien},
+  booktitle={2025 Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIxMHC)},
+  title={A State Space-Inspired U-Net with Linear Attention for Breast Tumor Segmentation},
+  year={2025},
+  pages={264-265},
+  doi={10.1109/AIxMHC65380.2025.00057}}</code></pre></div>
+    </div></section>
+  </main>
+  <footer class="wrap"><span>SSIU-Net · AIxMHC 2025</span><a href="#top">Back to top</a></footer>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # SSIU-Net : A State Space-Inspired U-Net with Linear Attention for Breast Tumor Image Segmentation  
-<div align="center">
+[Project page](https://chi-an-chen.github.io/SSIU-Net/) · [Paper](https://ieeexplore.ieee.org/document/11326852)
 
-  [[`Paper`](https://ieeexplore.ieee.org/document/11326852)]
+<div align="center">
   
   This is the official implementation of SSIU-Net: a State Space-Inspired U-Net that integrates a State Space Model (SSM) with a Mamba-Inspired Linear Attention Block (MILA) for breast tumor image segmentation.  
 
