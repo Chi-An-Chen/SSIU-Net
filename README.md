@@ -1,4 +1,6 @@
 # SSIU-Net : A State Space-Inspired U-Net with Linear Attention for Breast Tumor Image Segmentation  
+
+[Research guide: dataset paths, trainer, and evaluation](RESEARCH_GUIDE.md)
 [Project page](https://chi-an-chen.github.io/SSIU-Net/) · [Paper](https://ieeexplore.ieee.org/document/11326852)
 
 <div align="center">
